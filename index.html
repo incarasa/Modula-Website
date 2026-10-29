@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Modula Studio</title>
+  <meta name="claude:viewport-fit-sides" content="cover">
+  <meta name="description" content="Modula diseña sitios web y marcas para negocios que quieren conseguir clientes, no solo existir en internet.">
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+
+  <!-- Fuentes: las cuatro de Modula + las tres de NutriSenda (para su maqueta) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Fraunces:ital,wght@1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Alexandria:wght@800&family=Agbalumo&family=Afacad+Flux:wght@400;600&display=swap">
+
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+<!-- ======================================================================
+     NAVEGACIÓN
+     ====================================================================== -->
+<header class="nav" id="nav">
+  <div class="wrap nav__in">
+    <a href="#inicio" class="nav__logo" aria-label="Modula, volver al inicio">
+      <svg class="logo" viewBox="0 0 99 30" aria-hidden="true">
+        <text x="0" y="27" font-size="27">m</text>
+        <use href="#m-ring" fill="url(#m-grad)"/>
+        <text x="43.6" y="27" font-size="27">dula</text>
+      </svg>
+    </a>
+
+    <nav class="nav__links" aria-label="Principal">
+      <a class="nav__link" href="#servicios">Servicios</a>
+      <a class="nav__link" href="#proyectos">Proyectos</a>
+      <a class="nav__link" href="#por-que">¿Por qué Modula?</a>
+      <a class="nav__link" href="#proceso">Proceso</a>
+      <a class="nav__link" href="#preguntas">Preguntas</a>
+    </nav>
+
+    <a class="btn btn--primary btn--sm nav__cta" href="https://wa.me/573228713697?text=Hola%20Modula%2C%20me%20gustar%C3%ADa%20pedir%20una%20propuesta" target="_blank" rel="noopener" data-whatsapp>Solicita una cotización</a>
+
+    <button class="burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+      <i></i><i></i><i></i>
+    </button>
+  </div>
+
+  <!-- Menú móvil -->
+  <div class="menu" id="menu" hidden>
+    <div class="wrap">
+      <a href="#servicios">Servicios</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#por-que">¿Por qué Modula?</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#preguntas">Preguntas</a>
+      <a class="btn btn--primary" href="https://wa.me/573228713697?text=Hola%20Modula%2C%20me%20gustar%C3%ADa%20pedir%20una%20propuesta" target="_blank" rel="noopener" data-whatsapp><svg width="18" height="18" aria-hidden="true"><use href="#i-wa"/></svg>Solicita una cotización</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ======================================================================
+     HERO
+     ====================================================================== -->
+<section class="hero grid-bg" id="inicio">
+  <div class="blob blob--violeta float-a"></div>
+  <div class="blob blob--rosa float-b"></div>
+  <div class="blob blob--teal float-c"></div>
+
+  <!-- Tarjetitas decorativas (solo pantallas anchas) -->
+  <div class="hero__float hero__float--left float-a" aria-hidden="true">
+    <div class="float__bar"><i></i><i></i><i></i></div>
+    <div class="float__body">
+      <div class="sk" style="width: 40%"></div>
+      <div class="sk sk--grad"></div>
+      <div class="sk" style="width: 80%"></div>
+      <div class="sk-row"><b></b><b></b><b></b></div>
+    </div>
+  </div>
+  <div class="hero__float hero__float--right float-b" aria-hidden="true">
+    <div class="float__body">
+      <span class="label">Identidad · Color</span>
+      <div class="swatches">
+        <i style="background: #2D1FE8"></i><i style="background: #9B41C8"></i><i style="background: #E8336D"></i><i style="background: #00C9A7"></i><i style="background: #FFDD00"></i>
+      </div>
+      <div class="float__foot"><span class="aa">Aa</span><span class="label">Fraunces</span></div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="hero__inner" id="heroInner">
+      <span class="chip chip--violeta hero-in">Diseño web · Branding · Estrategia</span>
+      <h1 class="hero-in" data-delay="1">Tu sitio web debería <span class="em">ayudarte a conseguir clientes,</span> no solo existir en internet.</h1>
+      <p class="lead hero-in" data-delay="2">Diseñamos sitios web y marcas modernas, rápidas y profesionales que inspiran confianza y convierten visitantes en clientes.</p>
+      <div class="hero__btns hero-in" data-delay="3">
+        <a class="btn btn--primary" href="https://wa.me/573228713697?text=Hola%20Modula%2C%20me%20gustar%C3%ADa%20pedir%20una%20propuesta" target="_blank" rel="noopener" data-whatsapp><svg width="18" height="18" aria-hidden="true"><use href="#i-wa"/></svg>Solicitar una propuesta</a>
+        <a class="btn btn--ghost" href="#proceso">Conoce el proceso <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cinta de servicios: el segundo grupo repite el primero para que el desplazamiento no tenga cortes -->
+  <div class="ticker hero-in" data-delay="5" aria-label="Servicios de Modula">
+    <div class="ticker__track">
+      <div class="ticker__set">
+        <span>Sitios web a medida</span><svg><use href="#i-spark"/></svg>
+        <span>Landing pages</span><svg><use href="#i-spark"/></svg>
+        <span>Logo e identidad visual</span><svg><use href="#i-spark"/></svg>
+        <span>Manual de marca</span><svg><use href="#i-spark"/></svg>
+        <span>SEO y velocidad</span><svg><use href="#i-spark"/></svg>
+        <span>Dominio y hosting</span><svg><use href="#i-spark"/></svg>
+        <span>Mantenimiento</span><svg><use href="#i-spark"/></svg>
+      </div>
+      <div class="ticker__set" aria-hidden="true">
+        <span>Sitios web a medida</span><svg><use href="#i-spark"/></svg>
+        <span>Landing pages</span><svg><use href="#i-spark"/></svg>
+        <span>Logo e identidad visual</span><svg><use href="#i-spark"/></svg>
+        <span>Manual de marca</span><svg><use href="#i-spark"/></svg>
+        <span>SEO y velocidad</span><svg><use href="#i-spark"/></svg>
+        <span>Dominio y hosting</span><svg><use href="#i-spark"/></svg>
+        <span>Mantenimiento</span><svg><use href="#i-spark"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     EL PROBLEMA
+     Cada tarjeta: icono, etiqueta, título, texto y «cómo lo resolvemos».
+     Color con la clase acc-rosa / acc-purpura / acc-teal (sin clase = violeta).
+     ====================================================================== -->
+<section class="band grid-bg" id="problema">
+  <div class="wrap prob">
+    <div class="prob__head">
+      <span class="chip chip--rosa rv">El problema</span>
+      <h2 class="h2 rv" data-delay="1">Hoy, la primera impresión de tu negocio ocurre en internet.</h2>
+      <p class="lead rv" data-delay="2">¿Te identificas con alguna de estas situaciones? Cada una le cuesta clientes a tu negocio, y todas tienen solución.</p>
+      <p class="quote rv" data-delay="3">«Eso me pasa.»</p>
+    </div>
+
+    <div class="prob__list">
+      <article class="prob__item acc-rosa spot rv">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg></div>
+        <div>
+          <p class="tag">Solo redes sociales</p>
+          <h3>Tu negocio necesita un espacio propio</h3>
+          <p class="p">Tus clientes quieren ver más que posts en Instagram o TikTok. Las redes son un canal, no tu presencia digital completa.</p>
+          <p class="fix"><svg><use href="#i-arrow"/></svg>Un sitio propio que reúne tu oferta, tu historia y la forma de contactarte.</p>
+        </div>
+      </article>
+
+      <article class="prob__item spot rv" data-delay="1">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z"/></svg></div>
+        <div>
+          <p class="tag">Sitio desactualizado</p>
+          <h3>Una mala primera impresión cuesta clientes</h3>
+          <p class="p">Un sitio lento, anticuado o difícil de usar puede hacer que un cliente potencial se vaya antes de conocer lo que realmente ofreces.</p>
+          <p class="fix"><svg><use href="#i-arrow"/></svg>Un rediseño rápido, claro y pensado primero para el celular.</p>
+        </div>
+      </article>
+
+      <article class="prob__item acc-purpura spot rv" data-delay="2">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.7-.8 1.7-1.6 0-.9-.7-1.3-.7-2.2 0-1 .8-1.7 1.8-1.7H17a4 4 0 0 0 4-4C21 6.6 17 3 12 3Z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10.5" cy="7.5" r="1"/><circle cx="15" cy="7.8" r="1"/></svg></div>
+        <div>
+          <p class="tag">Marca sin identidad</p>
+          <h3>Tu marca no se ve como el negocio que eres</h3>
+          <p class="p">Un logo improvisado y colores que cambian en cada publicación hacen que tu negocio parezca más pequeño de lo que es.</p>
+          <p class="fix"><svg><use href="#i-arrow"/></svg>Una identidad visual y un manual de marca para verte igual en todas partes.</p>
+        </div>
+      </article>
+
+      <article class="prob__item acc-teal spot rv" data-delay="3">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3.5" width="14" height="18" rx="2.5"/><path d="M9 3.5h6v3H9zM9 11h6M9 15h4"/></svg></div>
+        <div>
+          <p class="tag">Sin acompañamiento</p>
+          <h3>Te entregan la página y desaparecen</h3>
+          <p class="p">Una página web necesita evolucionar junto con tu negocio: cambios, actualizaciones y alguien que responda cuando algo falla.</p>
+          <p class="fix"><svg><use href="#i-arrow"/></svg>Te acompañamos después de publicar para mantenerla y hacerla crecer.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     SERVICIOS
+     ====================================================================== -->
+<section class="band soft grid-bg" id="servicios">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="chip chip--violeta rv">Qué hacemos</span>
+      <h2 class="h2 rv" data-delay="1" style="max-width: 46rem">Una marca clara y un sitio web que <span class="em">trabaja por ti.</span></h2>
+      <p class="lead rv" data-delay="2">Diseñamos tu presencia digital completa: desde el logo y las reglas de tu marca hasta el sitio que la pone a trabajar. Puedes contratar cada servicio por separado o todo junto.</p>
+    </div>
+
+    <div class="bento">
+
+      <!-- Diseño y desarrollo web -->
+      <article class="svc svc--web spot rv">
+        <div class="svc--web__copy">
+          <div>
+            <p class="tag">Diseño y desarrollo web</p>
+            <h3>Sitios web que atraen, convencen y convierten.</h3>
+            <p class="p">Diseño a medida, sin plantillas. Cada sección tiene un propósito: que quien llega entienda qué haces y te escriba.</p>
+          </div>
+          <ul class="checks">
+            <li><svg><use href="#i-check"/></svg>Sitios corporativos y landing pages</li>
+            <li><svg><use href="#i-check"/></svg>Pensados primero para el celular</li>
+            <li><svg><use href="#i-check"/></svg>Bases de SEO, velocidad y accesibilidad</li>
+            <li><svg><use href="#i-check"/></svg>Dominio, hosting y seguridad configurados</li>
+            <li><svg><use href="#i-check"/></svg>Botón de WhatsApp y formularios de contacto</li>
+          </ul>
+        </div>
+
+        <!-- Maqueta animada: los módulos aparecen uno a uno -->
+        <div class="win" aria-hidden="true">
+          <div class="win__bar">
+            <div class="win__dots"><i></i><i></i><i></i></div>
+            <div class="win__url"><svg><use href="#i-lock"/></svg>tunegocio.ismodula.com</div>
+          </div>
+          <div class="build" id="build">
+            <div class="mod mod--nav"><b></b><span><i></i><i></i><i></i></span></div>
+            <div class="mod mod--hero"><i></i><i></i><i></i></div>
+            <div class="mod mod--card mod--violeta"></div>
+            <div class="mod mod--card mod--rosa"></div>
+            <div class="mod mod--card mod--teal"></div>
+            <div class="mod mod--wide"></div>
+            <div class="mod mod--sq"></div>
+            <svg class="cursor" viewBox="0 0 24 24"><path d="M5 3l14 7.5-6.2 1.6L10 18.5z" fill="currentColor" stroke="var(--bg)" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+      </article>
+
+      <!-- Logo e identidad visual -->
+      <article class="svc svc--brand acc-rosa spot rv" data-delay="1">
+        <p class="tag">Branding</p>
+        <h3>Logo e identidad visual</h3>
+        <p class="p">Tu logo y sus versiones, la paleta de color y las tipografías que hacen reconocible a tu negocio.</p>
+        <div class="brandviz" aria-hidden="true">
+          <div class="brandviz__top">
+            <svg class="brandviz__ring" viewBox="25.4 11 17.6 17.6"><use href="#m-ring" fill="url(#m-grad)"/></svg>
+            <span class="aa">Aa</span>
+          </div>
+          <div class="swatches">
+            <i style="background: #2D1FE8"></i><i style="background: #9B41C8"></i><i style="background: #E8336D"></i><i style="background: #00C9A7"></i><i style="background: #0E0D1F"></i>
+          </div>
+        </div>
+      </article>
+
+      <!-- Manual de marca -->
+      <article class="svc svc--manual acc-purpura spot rv" data-delay="2">
+        <p class="tag">Branding</p>
+        <h3>Manual de marca</h3>
+        <p class="p">Las reglas para que tu marca se vea igual en todas partes: usos del logo, colores con sus códigos, tipografías y la explicación de cada decisión.</p>
+        <div class="pages" aria-hidden="true">
+          <div class="page">
+            <b>02 · Color</b>
+            <div class="page__swatches"><i style="background: #2D1FE8"></i><i style="background: #E8336D"></i><i style="background: #00C9A7"></i></div>
+            <i></i><i style="width: 70%"></i>
+          </div>
+          <div class="page">
+            <b>03 · Tipografía</b>
+            <span class="page__aa">Aa</span>
+            <i></i><i style="width: 60%"></i>
+          </div>
+          <div class="page">
+            <b>01 · Logo</b>
+            <svg class="page__ring" viewBox="25.4 11 17.6 17.6"><use href="#m-ring" fill="url(#m-grad)"/></svg>
+            <i></i><i style="width: 75%"></i><i style="width: 50%"></i>
+          </div>
+        </div>
+      </article>
+
+      <!-- Acompañamiento -->
+      <article class="svc svc--care acc-teal spot rv">
+        <div class="svc--care__grid">
+          <div>
+            <p class="tag">Acompañamiento</p>
+            <h3>No desaparecemos después de publicar</h3>
+            <p class="p">Mantenimiento, actualizaciones de contenido y asesoría para que tu sitio crezca con tu negocio.</p>
+          </div>
+          <div class="status" aria-hidden="true">
+            <div class="status__row"><svg><use href="#i-check"/></svg>Sitio en línea<span>Hoy</span></div>
+            <div class="status__row"><svg><use href="#i-check"/></svg>Copia de seguridad<span>Semanal</span></div>
+            <div class="status__row"><svg><use href="#i-check"/></svg>Nuevos textos publicados<span>Ayer</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Próximamente -->
+      <article class="svc svc--next rv" data-delay="1">
+        <span class="chip">En camino</span>
+        <h3>Piezas gráficas y redes, por suscripción</h3>
+        <p class="p">Estamos preparando planes mensuales para que tu marca siga creciendo después del lanzamiento.</p>
+        <ul class="next-list">
+          <li>Papelería</li>
+          <li>Piezas para redes</li>
+          <li>Gestión de redes</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     PROYECTO DESTACADO: NUTRISENDA
+     ====================================================================== -->
+<section class="band grid-bg" id="proyectos">
+  <div class="wrap case">
+    <div class="case__copy">
+      <span class="chip rv">Proyecto destacado</span>
+      <h2 class="h2 rv" data-delay="1">NutriSenda: una marca y un sitio <span class="em">desde cero.</span></h2>
+      <p class="lead rv" data-delay="2">NutriSenda lleva el bienestar a los espacios de trabajo con charlas de nutrición y refrigerios saludables para empresas. Necesitaba verse tan cercana y rigurosa como su trabajo.</p>
+      <p class="p rv" data-delay="3">Creamos su identidad completa: un isotipo de hojas y sol, una paleta de verdes con acento amarillo, tipografías con voz propia y un manual que explica cada decisión. Con esa base estamos construyendo su sitio web.</p>
+      <ul class="deliver rv" data-delay="4">
+        <li>Logo e isotipos</li>
+        <li>Manual de marca</li>
+        <li>Paleta y tipografías</li>
+        <li>Ilustraciones</li>
+        <li>Fotografía de producto</li>
+        <li>Sitio web</li>
+      </ul>
+      <dl class="meta rv" data-delay="5">
+        <div><dt>Sector</dt><dd>Bienestar corporativo</dd></div>
+        <div><dt>Estado</dt><dd><span class="status-pill"><span class="dot" aria-hidden="true"></span>Sitio en desarrollo</span></dd></div>
+      </dl>
+      <a class="link rv" data-delay="6" href="https://resonant-twilight-8b1430.netlify.app/" target="_blank" rel="noopener">Ver avance del sitio <span class="arrow" aria-hidden="true">↗</span></a>
+    </div>
+
+    <div class="case__stage rv" data-delay="2">
+      <!-- Maqueta del sitio de NutriSenda -->
+      <div class="win case__win">
+        <div class="win__bar">
+          <div class="win__dots"><i></i><i></i><i></i></div>
+          <div class="win__url"><svg><use href="#i-lock"/></svg>nutrisenda · avance del sitio</div>
+        </div>
+        <div class="ns">
+          <div class="ns__nav">
+            <span class="ns__brand">
+              <img src="img/nutrisenda-isotipo.svg" alt="" width="26" height="25">
+              <img src="img/nutrisenda-logo.svg" alt="NutriSenda" width="80" height="22">
+            </span>
+            <span class="ns__links"><span>Charlas</span><span>Refrigerios</span><span>Contacto</span></span>
+          </div>
+          <div class="ns__hero">
+            <div>
+              <div class="ns__eyebrow">Bienestar en tu empresa</div>
+              <div class="ns__title">Refrigerios</div>
+              <div class="ns__sub">saludables</div>
+              <p class="ns__text">Para eventos, conferencias y jornadas de trabajo. Cuidarse también puede ser rico.</p>
+              <span class="ns__btn">Cotiza tu evento</span>
+            </div>
+            <div class="ns__photo"><img src="img/nutrisenda-refrigerio.jpg" alt="Sándwich de un refrigerio NutriSenda" width="760" height="570" loading="lazy"></div>
+          </div>
+          <div class="ns__band">
+            <div class="ns__svc"><b>Charlas</b><span>de bienestar</span></div>
+            <div class="ns__svc"><b>Refrigerios</b><span>saludables</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ficha de paleta y tipografías del manual -->
+      <aside class="board" aria-label="Paleta y tipografías de NutriSenda">
+        <span class="label">Manual de marca · Color</span>
+        <div class="board__swatches">
+          <div><i style="background: #19381F"></i><small>Bosque</small></div>
+          <div><i style="background: #4D934C"></i><small>Hoja</small></div>
+          <div><i style="background: #91B308"></i><small>Lima</small></div>
+          <div><i style="background: #EEE82B"></i><small>Sol</small></div>
+          <div><i style="background: #FFFEFA"></i><small>Crema</small></div>
+        </div>
+        <div class="board__type">
+          <span class="font-alexandria">Aa</span>
+          <span class="font-agbalumo">Aa</span>
+          <span class="font-afacad">Aa</span>
+          <span class="label">3 familias</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     POR QUÉ MODULA
+     ====================================================================== -->
+<section class="band soft grid-bg" id="por-que">
+  <div class="wrap why">
+    <div class="why__head">
+      <span class="chip chip--teal rv">Nuestra propuesta</span>
+      <h2 class="h2 rv" data-delay="1">Una buena página web debe hacer <span class="em">mucho más que verse bonita.</span></h2>
+      <p class="lead rv" data-delay="2">Cada proyecto que sale de Modula está pensado para trabajar por tu negocio: atraer, convencer y convertir.</p>
+      <div class="values">
+        <div class="value rv" data-delay="3"><b>Diseño que genera confianza</b><span>Cada detalle representa tu negocio con profesionalismo desde el primer vistazo.</span></div>
+        <div class="value rv" data-delay="4"><b>Construido para durar</b><span>Rápido, responsivo y cuidado en cada dispositivo.</span></div>
+        <div class="value rv" data-delay="5"><b>Optimizado para ser encontrado</b><span>Bases de SEO, rendimiento y estructura desde el inicio.</span></div>
+        <div class="value rv" data-delay="6"><b>Marca y web en sintonía</b><span>Tu identidad y tu sitio hablan el mismo idioma.</span></div>
+      </div>
+    </div>
+
+    <!-- Comparativa: cada fila = defecto | respuesta de Modula -->
+    <div class="cmp rv" data-delay="2" role="table" aria-label="Otras soluciones frente a Modula">
+      <div class="cmp__head" role="row">
+        <div role="columnheader">Otras soluciones</div>
+        <div role="columnheader"><svg><use href="#i-spark"/></svg>Con Modula</div>
+      </div>
+      <div class="cmp__row" role="row">
+        <div role="cell"><svg><use href="#i-x"/></svg>Una plantilla igual a la de muchos otros negocios</div>
+        <div role="cell"><svg><use href="#i-check"/></svg>Un diseño a medida para tu negocio y tu cliente</div>
+      </div>
+      <div class="cmp__row" role="row">
+        <div role="cell"><svg><use href="#i-x"/></svg>Te entregan una página</div>
+        <div role="cell"><svg><use href="#i-check"/></svg>Te entregamos una herramienta para crecer</div>
+      </div>
+      <div class="cmp__row" role="row">
+        <div role="cell"><svg><use href="#i-x"/></svg>Lenta y difícil de usar en el celular</div>
+        <div role="cell"><svg><use href="#i-check"/></svg>Rápida y pensada primero para el celular</div>
+      </div>
+      <div class="cmp__row" role="row">
+        <div role="cell"><svg><use href="#i-x"/></svg>El logo y el sitio no se parecen entre sí</div>
+        <div role="cell"><svg><use href="#i-check"/></svg>Marca y web diseñadas juntas, con un mismo manual</div>
+      </div>
+      <div class="cmp__row" role="row">
+        <div role="cell"><svg><use href="#i-x"/></svg>Nadie la encuentra en Google</div>
+        <div role="cell"><svg><use href="#i-check"/></svg>Bases de SEO desde el primer día</div>
+      </div>
+      <div class="cmp__row" role="row">
+        <div role="cell"><svg><use href="#i-x"/></svg>Desaparecen cuando publican</div>
+        <div role="cell"><svg><use href="#i-check"/></svg>Acompañamiento después del lanzamiento</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     PROCESO
+     Cada paso lleva data-phase con su etapa en la mini-ventana:
+     0 Descubrimiento · 1 Diseño · 2 Desarrollo · 3 Lanzamiento
+     ====================================================================== -->
+<section class="band grid-bg" id="proceso">
+  <div class="wrap proc">
+    <div class="proc__side">
+      <span class="chip chip--teal rv">Nuestro proceso</span>
+      <h2 class="h2 rv" data-delay="1">De la idea a la web publicada.</h2>
+      <p class="lead rv" data-delay="2">Un proceso claro, sin sorpresas. Sabes exactamente en qué etapa está tu proyecto en todo momento.</p>
+
+      <div class="win tracker rv" data-delay="3" aria-hidden="true">
+        <div class="win__bar">
+          <div class="win__dots"><i></i><i></i><i></i></div>
+          <div class="win__url"><svg><use href="#i-lock"/></svg>proceso.ismodula.com</div>
+        </div>
+        <div class="tracker__body">
+          <div class="trk trk--1"><span class="trk__check"><svg><use href="#i-check"/></svg></span><span class="trk__bar"><i></i></span><span class="trk__label">Descubrimiento</span></div>
+          <div class="trk trk--2"><span class="trk__check"><svg><use href="#i-check"/></svg></span><span class="trk__bar"><i></i></span><span class="trk__label">Diseño</span></div>
+          <div class="trk trk--3"><span class="trk__check"><svg><use href="#i-check"/></svg></span><span class="trk__bar"><i></i></span><span class="trk__label">Desarrollo</span></div>
+          <div class="trk trk--4"><span class="trk__check"><svg><use href="#i-check"/></svg></span><span class="trk__bar"><i></i></span><span class="trk__label">Lanzamiento</span></div>
+          <div class="tracker__now"><span>Etapa actual</span><b id="nowStage">Lanzamiento</b></div>
+        </div>
+      </div>
+    </div>
+
+    <ol class="steps" id="steps">
+      <li class="steps__line" aria-hidden="true"><i id="stepsFill"></i></li>
+
+      <li class="step step--1 on" data-phase="0">
+        <span class="step__n">01</span>
+        <div class="step__card">
+          <h3>Conocemos tu negocio <small>Descubrimiento</small></h3>
+          <p class="p">Una conversación sin formularios. Entendemos tus objetivos, tu industria y a quién quieres llegar.</p>
+        </div>
+      </li>
+      <li class="step step--2 on" data-phase="1">
+        <span class="step__n">02</span>
+        <div class="step__card">
+          <h3>Diseñamos la propuesta <small>Diseño</small></h3>
+          <p class="p">Bocetos, wireframes y estilo visual. Si necesitas marca, aquí nacen tu logo y tu manual. Ves el proyecto antes de la primera línea de código.</p>
+        </div>
+      </li>
+      <li class="step step--3 on" data-phase="2">
+        <span class="step__n">03</span>
+        <div class="step__card">
+          <h3>Construimos tu sitio <small>Desarrollo</small></h3>
+          <p class="p">Desarrollo con las mejores herramientas. Rápido, seguro y adaptado a tu marca en cada detalle.</p>
+        </div>
+      </li>
+      <li class="step step--4 on" data-phase="2">
+        <span class="step__n">04</span>
+        <div class="step__card">
+          <h3>Revisamos cada detalle <small>Desarrollo</small></h3>
+          <p class="p">Pruebas en todos los dispositivos, velocidad, SEO y accesibilidad. Nada sale sin pasar nuestro filtro.</p>
+        </div>
+      </li>
+      <li class="step step--5 on" data-phase="3">
+        <span class="step__n">05</span>
+        <div class="step__card">
+          <h3>Publicamos <small>Lanzamiento</small></h3>
+          <p class="p">Tu sitio sale al mundo. Configuramos dominio, hosting y seguridad desde el inicio.</p>
+        </div>
+      </li>
+      <li class="step step--6 on" data-phase="3">
+        <span class="step__n">06</span>
+        <div class="step__card">
+          <h3>Te acompañamos <small>Lanzamiento</small></h3>
+          <p class="p">No desaparecemos. Mantenimiento, actualizaciones y asesoría cuando lo necesites.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================================================================
+     PREGUNTAS FRECUENTES
+     Para añadir una: copia un .faq__item y cambia los id (faqN y faqNa).
+     ====================================================================== -->
+<section class="band soft grid-bg" id="preguntas">
+  <div class="wrap faq-wrap">
+    <div class="sec-head">
+      <span class="chip rv">Preguntas frecuentes</span>
+      <h2 class="h2 rv" data-delay="1">Lo que nos suelen preguntar.</h2>
+      <p class="lead rv" data-delay="2">¿Tienes otra duda? Escríbenos por WhatsApp y te respondemos en menos de 24 horas.</p>
+    </div>
+
+    <div class="faq rv" data-delay="2">
+      <div class="faq__item">
+        <button class="faq__q" type="button" id="faq1" aria-expanded="false" aria-controls="faq1a">¿Cuánto cuesta un sitio web o una marca? <span class="faq__icon"><svg><use href="#i-plus"/></svg></span></button>
+        <div class="faq__a" id="faq1a" role="region" aria-labelledby="faq1"><div>
+          <p>Trabajamos a medida, así que el valor depende de lo que necesites: número de páginas, si incluye marca, fotografía o funciones especiales. Después de una primera conversación te enviamos una propuesta con el alcance y el precio, sin compromiso.</p>
+        </div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q" type="button" id="faq2" aria-expanded="false" aria-controls="faq2a">¿Necesito tener logo antes de hacer mi sitio? <span class="faq__icon"><svg><use href="#i-plus"/></svg></span></button>
+        <div class="faq__a" id="faq2a" role="region" aria-labelledby="faq2"><div>
+          <p>No. Si aún no tienes una identidad clara, la creamos contigo antes de diseñar el sitio. Así tu marca y tu web nacen juntas y se ven coherentes desde el primer día.</p>
+        </div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q" type="button" id="faq3" aria-expanded="false" aria-controls="faq3a">¿Qué incluye el manual de marca? <span class="faq__icon"><svg><use href="#i-plus"/></svg></span></button>
+        <div class="faq__a" id="faq3a" role="region" aria-labelledby="faq3"><div>
+          <p>Tu logo y sus versiones, cómo y dónde usarlos, la paleta de colores con sus códigos, las tipografías y la explicación de cada decisión, para que cualquier persona aplique tu marca correctamente.</p>
+        </div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q" type="button" id="faq4" aria-expanded="false" aria-controls="faq4a">¿Cuánto tiempo toma el proyecto? <span class="faq__icon"><svg><use href="#i-plus"/></svg></span></button>
+        <div class="faq__a" id="faq4a" role="region" aria-labelledby="faq4"><div>
+          <p>Depende del alcance. En la propuesta te damos un cronograma con fechas para cada etapa, y durante el proyecto siempre sabes en qué punto está.</p>
+        </div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q" type="button" id="faq5" aria-expanded="false" aria-controls="faq5a">¿Qué pasa después de publicar? <span class="faq__icon"><svg><use href="#i-plus"/></svg></span></button>
+        <div class="faq__a" id="faq5a" role="region" aria-labelledby="faq5"><div>
+          <p>Te acompañamos. Nos encargamos del mantenimiento, las actualizaciones y los cambios que tu negocio necesite, y te asesoramos para que tu sitio siga creciendo.</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     CIERRE
+     ====================================================================== -->
+<section class="cta" id="contacto">
+  <div class="wrap">
+    <div class="cta__inner">
+      <span class="cta__pill rv" aria-hidden="true"><i></i><i></i><i></i>tunegocio.ismodula.com</span>
+      <h2 class="rv" data-delay="1">Tu próximo cliente probablemente buscará tu negocio en internet.</h2>
+      <p class="cta__lead rv" data-delay="2">Asegúrate de que refleje la calidad de tu negocio.</p>
+      <div class="cta__btns rv" data-delay="3">
+        <a class="btn btn--light" href="https://wa.me/573228713697?text=Hola%20Modula%2C%20me%20gustar%C3%ADa%20pedir%20una%20propuesta" target="_blank" rel="noopener" data-whatsapp><svg class="wa-green" width="18" height="18" aria-hidden="true"><use href="#i-wa"/></svg>Solicitar una propuesta</a>
+        <a class="btn btn--outline-light btn--email" href="mailto:contacto@ismodula.com"><svg width="18" height="18" aria-hidden="true"><use href="#i-mail"/></svg>contacto@ismodula.com</a>
+      </div>
+      <p class="cta__fine rv" data-delay="4">Sin formularios ni compromiso · Respondemos en menos de 24 h</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ======================================================================
+     FOOTER
+     ====================================================================== -->
+<footer class="footer">
+  <div class="wrap footer__in">
+    <svg class="logo" viewBox="0 0 99 30" role="img" aria-label="modula">
+      <text x="0" y="27" font-size="27">m</text>
+      <use href="#m-ring" fill="#fff"/>
+      <text x="43.6" y="27" font-size="27">dula</text>
+    </svg>
+    <p class="footer__copy">© 2026 Modula Studio · Diseño web y branding que se moldea a la esencia de tu negocio.</p>
+    <div class="footer__links">
+      <a href="https://wa.me/573228713697?text=Hola%20Modula%2C%20me%20gustar%C3%ADa%20pedir%20una%20propuesta" target="_blank" rel="noopener" data-whatsapp>+57 322 871 3697</a>
+      <a href="mailto:contacto@ismodula.com">contacto@ismodula.com</a>
+      <!-- PENDIENTE: poner el enlace real de Instagram -->
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Botón flotante de WhatsApp.
+     Todos los enlaces con data-whatsapp toman el número y el mensaje de js/main.js -->
+<a class="fab" href="https://wa.me/573228713697?text=Hola%20Modula%2C%20me%20gustar%C3%ADa%20pedir%20una%20propuesta" target="_blank" rel="noopener" data-whatsapp aria-label="Escríbenos por WhatsApp">
+  <svg><use href="#i-wa"/></svg>
+</a>
+
+<!-- ======================================================================
+     SPRITE: logo e iconos que se reutilizan con <use href="#id">.
+     No hace falta tocarlo. El trazado del anillo viene del sistema de diseño.
+     ====================================================================== -->
+<svg width="0" height="0" style="position: absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="m-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2D1FE8"/><stop offset="1" stop-color="#9B41C8"/></linearGradient>
+    <!-- Anillo de nueve festones del logo -->
+    <path id="m-ring" fill-rule="evenodd" d="M34.20,12.10 C34.42,11.89 34.68,11.63 34.93,11.51 C35.17,11.38 35.45,11.31 35.69,11.35 C35.93,11.39 36.16,11.56 36.35,11.76 C36.54,11.96 36.69,12.29 36.83,12.56 C36.97,12.84 37.06,13.16 37.19,13.39 C37.32,13.61 37.43,13.79 37.61,13.89 C37.79,14.00 38.00,14.00 38.26,14.00 C38.52,14.00 38.85,13.92 39.15,13.90 C39.45,13.89 39.81,13.85 40.08,13.92 C40.36,13.98 40.62,14.10 40.77,14.28 C40.93,14.47 41.00,14.75 41.02,15.03 C41.03,15.30 40.94,15.65 40.87,15.95 C40.80,16.25 40.66,16.56 40.61,16.81 C40.57,17.06 40.54,17.27 40.61,17.47 C40.68,17.66 40.84,17.80 41.04,17.97 C41.23,18.13 41.54,18.28 41.78,18.46 C42.03,18.65 42.32,18.85 42.49,19.07 C42.66,19.30 42.78,19.56 42.78,19.80 C42.78,20.04 42.66,20.30 42.49,20.53 C42.32,20.75 42.03,20.95 41.78,21.14 C41.54,21.32 41.23,21.47 41.04,21.63 C40.84,21.80 40.68,21.94 40.61,22.13 C40.54,22.33 40.57,22.54 40.61,22.79 C40.66,23.04 40.80,23.35 40.87,23.65 C40.94,23.95 41.03,24.30 41.02,24.57 C41.00,24.85 40.93,25.13 40.77,25.32 C40.62,25.50 40.36,25.62 40.08,25.68 C39.81,25.75 39.45,25.71 39.15,25.70 C38.85,25.68 38.52,25.60 38.26,25.60 C38.00,25.60 37.79,25.60 37.61,25.71 C37.43,25.81 37.32,25.99 37.19,26.21 C37.06,26.44 36.97,26.76 36.83,27.04 C36.69,27.31 36.54,27.64 36.35,27.84 C36.16,28.04 35.93,28.21 35.69,28.25 C35.45,28.29 35.17,28.22 34.93,28.09 C34.68,27.97 34.42,27.71 34.20,27.50 C33.98,27.29 33.78,27.01 33.58,26.85 C33.39,26.69 33.22,26.55 33.02,26.52 C32.81,26.48 32.61,26.55 32.37,26.64 C32.13,26.72 31.85,26.92 31.57,27.04 C31.29,27.15 30.96,27.31 30.68,27.34 C30.41,27.38 30.12,27.35 29.91,27.23 C29.70,27.11 29.54,26.87 29.43,26.62 C29.32,26.36 29.29,26.00 29.25,25.70 C29.21,25.40 29.24,25.06 29.20,24.80 C29.15,24.55 29.11,24.34 28.98,24.18 C28.84,24.03 28.64,23.95 28.40,23.86 C28.16,23.77 27.82,23.74 27.53,23.65 C27.24,23.56 26.89,23.47 26.66,23.32 C26.43,23.16 26.22,22.96 26.14,22.73 C26.05,22.51 26.08,22.22 26.16,21.95 C26.24,21.69 26.45,21.39 26.62,21.14 C26.78,20.88 27.02,20.64 27.15,20.42 C27.28,20.19 27.38,20.01 27.38,19.80 C27.38,19.59 27.28,19.41 27.15,19.18 C27.02,18.96 26.78,18.72 26.62,18.46 C26.45,18.21 26.24,17.91 26.16,17.65 C26.08,17.38 26.05,17.09 26.14,16.87 C26.22,16.64 26.43,16.44 26.66,16.28 C26.89,16.13 27.24,16.04 27.53,15.95 C27.82,15.86 28.16,15.83 28.40,15.74 C28.64,15.65 28.84,15.57 28.98,15.42 C29.11,15.26 29.15,15.05 29.20,14.80 C29.24,14.54 29.21,14.20 29.25,13.90 C29.29,13.60 29.32,13.24 29.43,12.98 C29.54,12.73 29.70,12.49 29.91,12.37 C30.12,12.25 30.41,12.22 30.68,12.26 C30.96,12.29 31.29,12.45 31.57,12.56 C31.85,12.68 32.13,12.88 32.37,12.96 C32.61,13.05 32.81,13.12 33.02,13.08 C33.22,13.05 33.39,12.91 33.58,12.75 C33.78,12.59 33.98,12.31 34.20,12.10Z M33.94,16.84 C33.86,16.97 33.81,17.10 33.73,17.16 C33.66,17.22 33.59,17.22 33.50,17.19 C33.41,17.16 33.30,17.05 33.17,16.97 C33.04,16.89 32.89,16.75 32.75,16.69 C32.61,16.62 32.45,16.57 32.34,16.58 C32.23,16.59 32.13,16.67 32.08,16.77 C32.03,16.87 32.02,17.05 32.02,17.20 C32.03,17.36 32.08,17.56 32.10,17.70 C32.12,17.85 32.16,17.98 32.14,18.08 C32.13,18.17 32.08,18.21 31.99,18.25 C31.89,18.29 31.74,18.28 31.59,18.29 C31.44,18.31 31.24,18.31 31.09,18.35 C30.94,18.39 30.78,18.45 30.71,18.53 C30.63,18.61 30.60,18.73 30.63,18.84 C30.65,18.96 30.76,19.10 30.86,19.21 C30.97,19.33 31.13,19.44 31.24,19.54 C31.35,19.64 31.47,19.72 31.52,19.80 C31.56,19.88 31.56,19.95 31.51,20.04 C31.46,20.12 31.34,20.21 31.23,20.32 C31.13,20.43 30.97,20.56 30.88,20.69 C30.80,20.81 30.71,20.96 30.71,21.07 C30.70,21.18 30.75,21.29 30.85,21.36 C30.94,21.43 31.11,21.47 31.27,21.49 C31.42,21.52 31.62,21.50 31.77,21.50 C31.92,21.51 32.06,21.49 32.14,21.52 C32.23,21.56 32.27,21.61 32.29,21.71 C32.31,21.81 32.27,21.96 32.26,22.11 C32.25,22.26 32.22,22.46 32.23,22.61 C32.24,22.76 32.27,22.93 32.34,23.02 C32.41,23.11 32.52,23.16 32.64,23.15 C32.75,23.15 32.91,23.06 33.04,22.98 C33.17,22.90 33.32,22.76 33.43,22.67 C33.55,22.58 33.65,22.47 33.73,22.44 C33.82,22.41 33.89,22.43 33.96,22.49 C34.04,22.55 34.11,22.69 34.20,22.81 C34.29,22.93 34.39,23.11 34.50,23.22 C34.61,23.33 34.74,23.43 34.85,23.46 C34.96,23.49 35.07,23.45 35.16,23.37 C35.24,23.29 35.31,23.13 35.36,22.98 C35.41,22.84 35.42,22.63 35.45,22.49 C35.48,22.35 35.49,22.20 35.54,22.12 C35.59,22.04 35.65,22.02 35.75,22.01 C35.85,22.01 35.99,22.07 36.14,22.11 C36.28,22.14 36.48,22.21 36.63,22.23 C36.78,22.24 36.95,22.24 37.05,22.19 C37.15,22.14 37.22,22.04 37.23,21.92 C37.24,21.81 37.19,21.64 37.13,21.49 C37.08,21.35 36.96,21.18 36.89,21.05 C36.82,20.92 36.73,20.81 36.72,20.72 C36.71,20.63 36.74,20.56 36.81,20.50 C36.88,20.43 37.03,20.39 37.17,20.32 C37.30,20.26 37.49,20.19 37.62,20.10 C37.74,20.01 37.87,19.90 37.92,19.80 C37.96,19.70 37.95,19.58 37.88,19.48 C37.82,19.38 37.67,19.29 37.54,19.21 C37.40,19.14 37.20,19.09 37.07,19.03 C36.93,18.98 36.79,18.94 36.72,18.88 C36.65,18.82 36.63,18.76 36.65,18.66 C36.66,18.56 36.75,18.43 36.81,18.29 C36.87,18.16 36.97,17.98 37.01,17.83 C37.05,17.68 37.08,17.52 37.05,17.41 C37.01,17.30 36.93,17.22 36.82,17.18 C36.70,17.15 36.53,17.17 36.38,17.20 C36.23,17.24 36.04,17.32 35.90,17.37 C35.76,17.41 35.63,17.48 35.54,17.48 C35.45,17.47 35.39,17.44 35.34,17.35 C35.29,17.27 35.27,17.11 35.23,16.97 C35.19,16.83 35.15,16.62 35.09,16.48 C35.02,16.35 34.94,16.20 34.85,16.14 C34.75,16.08 34.63,16.07 34.52,16.12 C34.41,16.16 34.30,16.29 34.20,16.41 C34.10,16.53 34.02,16.72 33.94,16.84Z"/>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2.5c.6 4.6 2.9 6.9 7.5 7.5-4.6.6-6.9 2.9-7.5 7.5-.6-4.6-2.9-6.9-7.5-7.5 4.6-.6 6.9-2.9 7.5-7.5Z" fill="currentColor"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91A9.84 9.84 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.23 8.23 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 8.24 8.25c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.16-.48-.29Z"/></symbol>
+  </defs>
+</svg>
+
+</body>
+</html>
