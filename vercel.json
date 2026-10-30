@@ -1,4 +1,12 @@
 {
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "modula-website-ten.vercel.app" }],
+      "destination": "https://ismodula.com/:path*",
+      "statusCode": 301
+    }
+  ],
   "headers": [
     {
       "source": "/fonts/(.*)",

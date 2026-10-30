@@ -11,7 +11,9 @@ js/main.js        Interacciones (menú, animaciones, proceso, preguntas, enlaces
 img/              Favicon, icono de iPhone, imagen para compartir e imágenes del caso NutriSenda
 og/               Fuente de la imagen para compartir (og-card.html → img/og-modula.png)
 fonts/            Fuentes de Modula en woff2 (se declaran al inicio de css/estilos.css)
-vercel.json       Caché del navegador en Vercel: fonts/ un año; css/, js/ e img/ un día
+vercel.json       Caché del navegador en Vercel y redirección del dominio de Vercel a ismodula.com
+robots.txt        Permite a los buscadores rastrear todo y les indica el sitemap
+sitemap.xml       Páginas del sitio para Google (añade cada página nueva)
 docs/             Copia del sistema de diseño de Modula
 CLAUDE.md         Contexto del proyecto para Claude Code
 ```
