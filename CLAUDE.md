@@ -8,7 +8,7 @@ Modula es un estudio de diseño y desarrollo web (Colombia) que hace sitios web 
 - **Un archivo por tipo:** `index.html` (contenido), `css/estilos.css` (estilos), `js/main.js` (interacciones). No crees archivos CSS o JS nuevos sin una razón clara.
 - **Cambios pequeños y en el lugar.** Edita lo que se pide sin reescribir secciones enteras ni reformatear lo que no cambió.
 - **Mantén los comentarios de sección** en los tres archivos y el índice al inicio de `estilos.css`; si añades una sección, añádela también al índice.
-- Lee `LEEME.md` para saber dónde vive cada cosa.
+- Lee `README.md` para saber dónde vive cada cosa.
 
 ## Sistema de diseño
 
