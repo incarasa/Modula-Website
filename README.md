@@ -8,7 +8,10 @@ Sitio estático en HTML, CSS y JavaScript, sin librerías ni pasos de compilaci�
 index.html        Todo el contenido (textos, secciones, enlaces)
 css/estilos.css   Todos los estilos, con un índice al inicio
 js/main.js        Interacciones (menú, animaciones, proceso, preguntas, enlaces de WhatsApp)
-img/              Favicon e imágenes del caso NutriSenda
+img/              Favicon, icono de iPhone, imagen para compartir e imágenes del caso NutriSenda
+og/               Fuente de la imagen para compartir (og-card.html → img/og-modula.png)
+fonts/            Fuentes de Modula en woff2 (se declaran al inicio de css/estilos.css)
+vercel.json       Caché del navegador en Vercel: fonts/ un año; css/, js/ e img/ un día
 docs/             Copia del sistema de diseño de Modula
 CLAUDE.md         Contexto del proyecto para Claude Code
 ```

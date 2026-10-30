@@ -7,11 +7,29 @@
   <meta name="claude:viewport-fit-sides" content="cover">
   <meta name="description" content="Modula diseña sitios web y marcas para negocios que quieren conseguir clientes, no solo existir en internet.">
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 
-  <!-- Fuentes: las cuatro de Modula + las tres de NutriSenda (para su maqueta) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Fraunces:ital,wght@1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Alexandria:wght@800&family=Agbalumo&family=Afacad+Flux:wght@400;600&display=swap">
+  <!-- Vista previa al compartir (WhatsApp, iMessage, redes).
+       URL base: https://modula-website-ten.vercel.app
+       Cámbiala a https://ismodula.com en og:url y og:image cuando el dominio apunte a Vercel.
+       La imagen se genera desde og/og-card.html. -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Modula Studio">
+  <meta property="og:description" content="Modula diseña sitios web y marcas para negocios que quieren conseguir clientes, no solo existir en internet.">
+  <meta property="og:url" content="https://modula-website-ten.vercel.app/">
+  <meta property="og:image" content="https://modula-website-ten.vercel.app/img/og-modula.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="es_CO">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fuentes de Modula: alojadas en /fonts y declaradas al inicio de estilos.css.
+       Se precargan solo las del titular. -->
+  <link rel="preload" href="fonts/bricolage-grotesque-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/fraunces-italic-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Las tres de NutriSenda (solo su maqueta): cargan sin bloquear la página -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@800&family=Agbalumo&family=Afacad+Flux:wght@400;600&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@800&family=Agbalumo&family=Afacad+Flux:wght@400;600&display=swap"></noscript>
 
   <link rel="stylesheet" href="css/estilos.css">
   <script src="js/main.js" defer></script>
@@ -92,7 +110,7 @@
   <div class="wrap">
     <div class="hero__inner" id="heroInner">
       <span class="chip chip--violeta hero-in">Diseño web · Branding · Estrategia</span>
-      <h1 class="hero-in" data-delay="1">Tu sitio web debería <span class="em">ayudarte a conseguir clientes,</span> no solo existir en internet.</h1>
+      <h1>Tu sitio web debería <span class="em">ayudarte a conseguir clientes,</span> no solo existir en internet.</h1>
       <p class="lead hero-in" data-delay="2">Diseñamos sitios web y marcas modernas, rápidas y profesionales que inspiran confianza y convierten visitantes en clientes.</p>
       <div class="hero__btns hero-in" data-delay="3">
         <a class="btn btn--primary" href="https://wa.me/573228713697?text=Hola%20Modula%2C%20me%20gustar%C3%ADa%20pedir%20una%20propuesta" target="_blank" rel="noopener" data-whatsapp><svg width="18" height="18" aria-hidden="true"><use href="#i-wa"/></svg>Solicitar una propuesta</a>

@@ -48,6 +48,13 @@ Lo esencial:
 - Los precios no se publican: el trabajo es a medida y se cotiza tras una conversación.
 - Servicios futuros (anunciados como «En camino»): papelería, piezas para redes y gestión de redes por suscripción.
 
+## Rendimiento
+
+- No uses `filter: blur()` ni `backdrop-filter` en elementos grandes o animados en móvil: en iPhone dejan el hero en blanco al cargar y retrasan el menú. Para manchas de color usa `radial-gradient` (como `.blob`); el vidrio de la barra y el menú solo va desde 1024 px; debajo, la barra usa `--glass-solid` y el menú `--bg` (opaco).
+- Las fuentes de Modula están en `fonts/` (woff2, subconjunto latin) y se declaran en la sección 0 de `estilos.css`, con respaldos ajustados (`size-adjust`) para que el texto no salte. No vuelvas a cargarlas desde Google Fonts. Si cambias un archivo de `fonts/`, cámbiale el nombre: `vercel.json` lo guarda en caché un año como inmutable.
+- El titular del hero (h1) no lleva animación de entrada: es lo que mide Google como contenido principal (LCP).
+- Mantén las etiquetas Open Graph y `twitter:card` del `<head>` de `index.html`, con `og:image` en URL absoluta. La imagen `img/og-modula.png` (1200 × 630) se genera desde `og/og-card.html`; si cambia el dominio, actualiza `og:url` y `og:image`.
+
 ## Pendientes
 
 - Enlace real de Instagram en el footer (marcado como PENDIENTE en `index.html`).
