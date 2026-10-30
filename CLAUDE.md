@@ -55,9 +55,17 @@ Lo esencial:
 - El titular del hero (h1) no lleva animación de entrada: es lo que mide Google como contenido principal (LCP).
 - Mantén las etiquetas Open Graph y `twitter:card` del `<head>` de `index.html`, con `og:image` en URL absoluta. La imagen `img/og-modula.png` (1200 × 630) se genera desde `og/og-card.html`; si cambia el dominio, actualiza `og:url` y `og:image`.
 
+## SEO
+
+- **Una sola URL oficial: https://ismodula.com.** El `canonical`, las etiquetas Open Graph, el JSON-LD, `robots.txt` y `sitemap.xml` usan siempre ese dominio. `vercel.json` redirige (301) modula-website-ten.vercel.app a ismodula.com; no enlaces a dominios de Vercel.
+- **Sitemap al día:** al crear una página, añádela a `sitemap.xml` y actualiza `lastmod` de las que cambien.
+- **Cada página con lo suyo:** `<title>`, meta description (menos de 155 caracteres, en tuteo) y `<link rel="canonical">` propios. En la portada, `og:description` repite la meta description.
+- **Ubicación:** Modula es un estudio remoto con base en Bogotá que atiende clientes en toda Colombia. En textos y datos estructurados di «Bogotá» y «toda Colombia».
+- **Nunca publiques una dirección física** (calle, oficina ni código postal): no hay oficina. En el JSON-LD (`ProfessionalService`), `address` lleva solo ciudad, región y país.
+
 ## Pendientes
 
-- Enlace real de Instagram en el footer (marcado como PENDIENTE en `index.html`).
+- Enlace real de Instagram en el footer (marcado como PENDIENTE en `index.html`). Cuando exista, añádelo también como `sameAs` en el JSON-LD del `<head>`.
 - Cuando haya más proyectos, la sección «Proyecto destacado» puede pasar a varios casos.
 
 ## Antes de terminar un cambio
