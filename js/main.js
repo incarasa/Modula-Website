@@ -85,11 +85,11 @@ function setupReveal() {
 
 
 /* --------------------------------------------------------------------------
-   3. Hero: el contenido sube y se desvanece al hacer scroll (desde 640 px)
+   3. Hero: el contenido sube y se desvanece al hacer scroll (desde 1024 px)
    -------------------------------------------------------------------------- */
 function setupHeroParallax() {
   const hero = document.getElementById("heroInner");
-  if (prefersReducedMotion || !window.matchMedia("(min-width: 640px)").matches) return;
+  if (prefersReducedMotion || !window.matchMedia("(min-width: 1024px)").matches) return;
 
   let waiting = false;
   window.addEventListener("scroll", () => {
@@ -108,8 +108,11 @@ function setupHeroParallax() {
 
 /* --------------------------------------------------------------------------
    4. Luz que sigue al cursor en las tarjetas con la clase .spot
+   Solo con mouse o trackpad: en pantallas táctiles no hay cursor que seguir.
    -------------------------------------------------------------------------- */
 function setupCardSpotlight() {
+  if (!window.matchMedia("(hover: hover)").matches) return;
+
   document.querySelectorAll(".spot").forEach((card) => {
     card.addEventListener("pointermove", (event) => {
       const box = card.getBoundingClientRect();
@@ -187,11 +190,24 @@ function setupProcess() {
   }
 
   let waiting = false;
-  window.addEventListener("scroll", () => {
+  const onScroll = () => {
     if (waiting) return;
     waiting = true;
     requestAnimationFrame(() => { waiting = false; update(); });
-  }, { passive: true });
+  };
+
+  // Solo escucha el scroll mientras la sección está en pantalla
+  new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        window.addEventListener("scroll", onScroll, { passive: true });
+      } else {
+        window.removeEventListener("scroll", onScroll);
+      }
+      update();
+    });
+  }).observe(document.getElementById("proceso"));
+
   window.addEventListener("resize", update);
   update();
 }

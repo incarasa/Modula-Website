@@ -3,6 +3,7 @@
    Sistema de diseño: «Modula» (tokens, componentes y reglas de voz).
 
    Índice
+     0. Fuentes (archivos en /fonts y respaldos sin saltos)
      1. Tokens (colores, tipografías, sombras) — tema claro y oscuro
      2. Base (reset, enlaces, foco)
      3. Utilidades de layout (contenedor, bandas, cuadrícula)
@@ -22,6 +23,101 @@
 
    Para cambiar un color de marca, edita solo la sección 1.
    ========================================================================== */
+
+
+/* ==========================================================================
+   0. FUENTES
+   Alojadas en /fonts (solo el subconjunto latin, variables cuando existen).
+   index.html precarga Bricolage Grotesque y Fraunces, las del titular.
+   ========================================================================== */
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  font-style: normal;
+  font-weight: 600 800;
+  font-display: swap;
+  src: url("../fonts/bricolage-grotesque-latin-var.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../fonts/plus-jakarta-sans-latin-var.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/barlow-latin-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/barlow-latin-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/barlow-latin-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: italic;
+  font-weight: 600 700;
+  font-display: swap;
+  src: url("../fonts/fraunces-italic-latin-var.woff2") format("woff2");
+}
+
+/* Respaldos: Arial y Georgia ajustadas a las medidas de cada fuente, para que
+   el texto no salte cuando esta termina de cargar. Valores medidos sobre los
+   textos del sitio (Bricolage en opsz 40, el tamaño del titular en móvil). */
+@font-face {
+  font-family: "Bricolage Grotesque Fallback";
+  src: local("Arial Bold"), local("Arial-BoldMT");
+  size-adjust: 99.42%;
+  ascent-override: 93.54%;
+  descent-override: 27.16%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans Fallback";
+  src: local("Arial"), local("ArialMT");
+  size-adjust: 104.68%;
+  ascent-override: 99.16%;
+  descent-override: 21.21%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: "Barlow Fallback";
+  src: local("Arial Bold"), local("Arial-BoldMT");
+  size-adjust: 86.54%;
+  ascent-override: 115.56%;
+  descent-override: 23.11%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: "Fraunces Fallback";
+  font-style: italic;
+  src: local("Georgia Bold Italic"), local("Georgia-BoldItalic");
+  size-adjust: 92.53%;
+  ascent-override: 105.70%;
+  descent-override: 27.56%;
+  line-gap-override: 0%;
+}
 
 
 /* ==========================================================================
@@ -62,6 +158,7 @@
   --border-strong: rgba(14, 13, 31, 0.15);
   --grid-line: rgba(45, 31, 232, 0.045);
   --glass: rgba(255, 255, 255, 0.72);
+  --glass-solid: rgba(255, 255, 255, 0.96); /* --bg al 96%: barra y menú en móvil */
   --ghost: rgba(255, 255, 255, 0.5);
   --win-bar: #F0EEFF;
   --blob-opacity: 0.11;
@@ -77,10 +174,10 @@
   --shadow-cta: 0 8px 28px rgba(45, 31, 232, 0.28);
 
   /* Tipografías */
-  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif; /* títulos */
-  --font-body: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;      /* texto */
-  --font-ui: "Barlow", ui-sans-serif, system-ui, sans-serif;                   /* chips, botones, etiquetas */
-  --font-serif: "Fraunces", Georgia, serif;                                    /* frase de énfasis */
+  --font-display: "Bricolage Grotesque", "Bricolage Grotesque Fallback", ui-sans-serif, system-ui, sans-serif; /* títulos */
+  --font-body: "Plus Jakarta Sans", "Plus Jakarta Sans Fallback", ui-sans-serif, system-ui, sans-serif;        /* texto */
+  --font-ui: "Barlow", "Barlow Fallback", ui-sans-serif, system-ui, sans-serif;                                /* chips, botones, etiquetas */
+  --font-serif: "Fraunces", "Fraunces Fallback", Georgia, serif;                                               /* frase de énfasis */
 
   /* Movimiento y márgenes laterales */
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
@@ -106,6 +203,7 @@
     --border-strong: rgba(255, 255, 255, 0.22);
     --grid-line: rgba(255, 255, 255, 0.035);
     --glass: rgba(14, 13, 31, 0.7);
+    --glass-solid: rgba(14, 13, 31, 0.96);
     --ghost: rgba(255, 255, 255, 0.04);
     --win-bar: #1F1D38;
     --blob-opacity: 0.16;
@@ -129,6 +227,7 @@
   --border-strong: rgba(255, 255, 255, 0.22);
   --grid-line: rgba(255, 255, 255, 0.035);
   --glass: rgba(14, 13, 31, 0.7);
+  --glass-solid: rgba(14, 13, 31, 0.96);
   --ghost: rgba(255, 255, 255, 0.04);
   --win-bar: #1F1D38;
   --blob-opacity: 0.16;
@@ -622,6 +721,21 @@ h3 {
   margin-top: 14px;
 }
 
+/* Móvil y tableta: fondo sólido en vez de vidrio. backdrop-filter pesa en
+   iPhone, retrasa el menú y deja una línea oscura bajo la barra. */
+@media (max-width: 1023px) {
+  .nav.is-scrolled,
+  .menu {
+    background: var(--glass-solid);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  .menu { background: var(--bg); } /* opaco: no se transparenta el hero */
+
+  .nav.is-open { transition: none; } /* el menú abre al instante */
+}
+
 /* Escritorio: enlaces visibles, sin hamburguesa */
 @media (min-width: 1024px) {
   .nav__links { display: flex; }
@@ -673,19 +787,30 @@ h3 {
   margin-top: 8px;
 }
 
-/* Manchas de color desenfocadas del fondo */
+/* Manchas de color desenfocadas del fondo.
+   Sin filter: blur (pesa mucho en iPhone). El radial-gradient imita un
+   desenfoque de 72 px: sólido hasta 144 px antes del borde, 50% en el borde
+   y transparente 144 px después. Ese halo se pinta en el padding, y el margen
+   negativo lo compensa, así que width/height/posición son las del círculo. */
 .blob {
   position: absolute;
   z-index: 0;
-  border-radius: 999px;
-  filter: blur(72px);
+  box-sizing: content-box;
+  padding: 144px;
+  margin: -144px;
   opacity: var(--blob-opacity);
   pointer-events: none;
+  background: radial-gradient(circle closest-side,
+    var(--blob-c) calc(100% - 288px),
+    color-mix(in srgb, var(--blob-c) 84%, transparent) calc(100% - 216px),
+    color-mix(in srgb, var(--blob-c) 50%, transparent) calc(100% - 144px),
+    color-mix(in srgb, var(--blob-c) 16%, transparent) calc(100% - 72px),
+    transparent);
 }
 
-.blob--violeta { width: 520px; height: 520px; left: -160px; top: -120px; background: linear-gradient(135deg, var(--violeta), var(--violeta-medio)); }
-.blob--rosa    { width: 460px; height: 460px; right: -140px; top: 60px;  background: linear-gradient(135deg, var(--rosa), var(--rosa-claro)); }
-.blob--teal    { width: 380px; height: 380px; left: 38%; bottom: -220px; background: linear-gradient(135deg, var(--teal), var(--violeta)); }
+.blob--violeta { width: 520px; height: 520px; left: -160px; top: -120px; --blob-c: color-mix(in srgb, var(--violeta), var(--violeta-medio)); }
+.blob--rosa    { width: 460px; height: 460px; right: -140px; top: 60px;  --blob-c: color-mix(in srgb, var(--rosa), var(--rosa-claro)); }
+.blob--teal    { width: 380px; height: 380px; left: 38%; bottom: -220px; --blob-c: color-mix(in srgb, var(--teal), var(--violeta)); }
 
 /* Tarjetitas flotantes a los lados del titular (solo pantallas anchas) */
 .hero__float {
@@ -773,8 +898,6 @@ h3 {
   overflow: hidden;
   border-block: 1px solid var(--border-subtle);
   background: var(--glass);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
 }
@@ -2132,14 +2255,13 @@ h3 {
 
 /* Entrada del hero al cargar la página */
 .hero-in {
-  animation: hero-in 1s var(--ease) both;
-  animation-delay: 100ms;
+  animation: hero-in 0.6s var(--ease) both;
+  animation-delay: 0ms;
 }
 
-.hero-in[data-delay="1"] { animation-delay: 210ms; }
-.hero-in[data-delay="2"] { animation-delay: 320ms; }
-.hero-in[data-delay="3"] { animation-delay: 430ms; }
-.hero-in[data-delay="5"] { animation-delay: 650ms; }
+.hero-in[data-delay="2"] { animation-delay: 120ms; }
+.hero-in[data-delay="3"] { animation-delay: 180ms; }
+.hero-in[data-delay="5"] { animation-delay: 240ms; }
 
 /* Brillo que recorre la frase en serif del hero */
 .hero h1 .em {
@@ -2151,7 +2273,12 @@ h3 {
 .float-b { animation: float-b 16s ease-in-out infinite; }
 .float-c { animation: float-a 11s ease-in-out infinite reverse; }
 
-@keyframes hero-in { from { opacity: 0; transform: translateY(24px); filter: blur(6px); } }
+/* En móvil y tableta las manchas se quedan quietas */
+@media (max-width: 1023px) {
+  .blob { animation: none; }
+}
+
+@keyframes hero-in { from { opacity: 0; transform: translateY(16px); } }
 @keyframes shimmer { 0%, 100% { background-position: 0 0; } 50% { background-position: 100% 0; } }
 @keyframes float-a { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(30px, -26px); } }
 @keyframes float-b { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-36px, 22px); } }
