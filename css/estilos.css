@@ -4,13 +4,13 @@
 
    Índice
      0. Fuentes (archivos en /fonts y respaldos sin saltos)
-     1. Tokens (colores, tipografías, sombras) — tema claro y oscuro
+     1. Tokens (colores, tipografías, sombras) — un solo tema, claro
      2. Base (reset, enlaces, foco)
      3. Utilidades de layout (contenedor, bandas, cuadrícula)
      4. Tipografía (chips, títulos, frase en serif, párrafos)
      5. Botones
      6. Logo y navegación
-     7. Hero y cinta de servicios
+     7. Hero
      8. Sección: Problema
      9. Sección: Servicios
     10. Sección: Proyecto destacado (NutriSenda)
@@ -144,7 +144,7 @@
   --dot-amarillo: #FFBD2E;
   --dot-verde: #28CA41;
 
-  /* Colores semánticos — tema claro (el oscuro los redefine abajo) */
+  /* Colores semánticos (el sitio solo tiene tema claro) */
   --bg: #FFFFFF;
   --bg-soft: #F7F6FF;
   --card: #FFFFFF;
@@ -183,57 +183,9 @@
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --gutter-l: max(20px, env(safe-area-inset-left, 0px));
   --gutter-r: max(20px, env(safe-area-inset-right, 0px));
-}
 
-/* Tema oscuro: mismos nombres, otros valores.
-   Se repite dos veces para respetar tanto la preferencia del sistema
-   como una elección explícita con data-theme. */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0E0D1F;
-    --bg-soft: #16152B;
-    --card: #17162C;
-    --text: #F7F6FF;
-    --text-muted: #A9A7C6;
-    --accent-text: #A99BFF;
-    --rosa-texto: #FF7FA8;
-    --teal-texto: #2EE0BE;
-    --purpura-texto: #D59CF2;
-    --border-subtle: rgba(255, 255, 255, 0.09);
-    --border-strong: rgba(255, 255, 255, 0.22);
-    --grid-line: rgba(255, 255, 255, 0.035);
-    --glass: rgba(14, 13, 31, 0.7);
-    --glass-solid: rgba(14, 13, 31, 0.96);
-    --ghost: rgba(255, 255, 255, 0.04);
-    --win-bar: #1F1D38;
-    --blob-opacity: 0.16;
-    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.3), 0 16px 40px -16px rgba(0, 0, 0, 0.6);
-    --shadow-2xl: 0 30px 60px -15px rgba(0, 0, 0, 0.7);
-    color-scheme: dark;
-  }
-}
-
-:root[data-theme="dark"] {
-  --bg: #0E0D1F;
-  --bg-soft: #16152B;
-  --card: #17162C;
-  --text: #F7F6FF;
-  --text-muted: #A9A7C6;
-  --accent-text: #A99BFF;
-  --rosa-texto: #FF7FA8;
-  --teal-texto: #2EE0BE;
-  --purpura-texto: #D59CF2;
-  --border-subtle: rgba(255, 255, 255, 0.09);
-  --border-strong: rgba(255, 255, 255, 0.22);
-  --grid-line: rgba(255, 255, 255, 0.035);
-  --glass: rgba(14, 13, 31, 0.7);
-  --glass-solid: rgba(14, 13, 31, 0.96);
-  --ghost: rgba(255, 255, 255, 0.04);
-  --win-bar: #1F1D38;
-  --blob-opacity: 0.16;
-  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.3), 0 16px 40px -16px rgba(0, 0, 0, 0.6);
-  --shadow-2xl: 0 30px 60px -15px rgba(0, 0, 0, 0.7);
-  color-scheme: dark;
+  /* El navegador no oscurece la página ni los controles por su cuenta */
+  color-scheme: light;
 }
 
 @media (min-width: 640px) {
@@ -514,16 +466,6 @@ h3 {
 .btn--outline-light { color: #fff; background: transparent; border-color: rgba(255, 255, 255, 0.45); }
 .btn--outline-light:hover { background: rgba(255, 255, 255, 0.12); }
 
-/* Punto que pulsa dentro del CTA principal */
-.dot {
-  flex: none;
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: currentColor;
-  animation: pulse 3s ease-in-out infinite;
-}
-
 /* Flecha que avanza al pasar el cursor */
 .arrow {
   display: inline-block;
@@ -746,14 +688,14 @@ h3 {
 
 
 /* ==========================================================================
-   7. HERO Y CINTA DE SERVICIOS
+   7. HERO
    ========================================================================== */
 
 .hero {
   position: relative;
   overflow: hidden;
   padding-top: calc(150px + env(safe-area-inset-top, 0px));
-  padding-bottom: 56px;
+  padding-bottom: clamp(72px, 10vw, 120px); /* el mismo aire que las secciones */
 }
 
 .hero__inner {
@@ -785,6 +727,18 @@ h3 {
   justify-content: center;
   gap: 14px;
   margin-top: 8px;
+}
+
+/* Contenedor de las manchas: las desvanece en los últimos 160 px del hero
+   para que no terminen en un borde recto (la teal queda cortada abajo).
+   La máscara solo toca las manchas, no la cuadrícula ni el contenido. */
+.hero__blobs {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 160px), transparent);
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 160px), transparent);
 }
 
 /* Manchas de color desenfocadas del fondo.
@@ -888,50 +842,6 @@ h3 {
 
 .swatches i:hover {
   flex: 2.4;
-}
-
-/* Cinta que se desplaza con los servicios */
-.ticker {
-  position: relative;
-  z-index: 2;
-  margin-top: 72px;
-  overflow: hidden;
-  border-block: 1px solid var(--border-subtle);
-  background: var(--glass);
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
-}
-
-.ticker__track {
-  display: flex;
-  width: max-content;
-  animation: marquee 38s linear infinite;
-}
-
-.ticker:hover .ticker__track {
-  animation-play-state: paused;
-}
-
-/* El contenido va dos veces para que el desplazamiento no tenga cortes */
-.ticker__set {
-  display: flex;
-  align-items: center;
-  gap: 36px;
-  padding: 18px;
-  font-family: var(--font-ui);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  color: var(--text-muted);
-}
-
-.ticker__set svg {
-  flex: none;
-  width: 14px;
-  height: 14px;
-  color: var(--accent-text);
 }
 
 
@@ -1580,15 +1490,17 @@ h3 {
   color: var(--teal-texto);
 }
 
-/* Composición: ventana + ficha de color superpuesta */
+/* Composición: ventana + ficha de color superpuesta.
+   El padding inferior deja que la ficha monte solo sobre el borde de la
+   ventana, sin tapar las tres experiencias de la franja verde. */
 .case__stage {
   position: relative;
   min-width: 0;
-  padding: 0 0 64px;
+  padding: 0 0 160px;
 }
 
 @media (min-width: 640px) {
-  .case__stage { padding: 0 40px 70px 0; }
+  .case__stage { padding: 0 40px 180px 0; }
 }
 
 .case__win {
@@ -1597,11 +1509,32 @@ h3 {
 
 @media (min-width: 1024px) {
   .case__win { transform: perspective(1600px) rotateY(-6deg) rotateX(2deg); }
-  .case__stage:hover .case__win { transform: none; }
 }
 
-/* Maqueta del sitio de NutriSenda, con su propia marca.
-   Estos colores son los de NutriSenda y no cambian con el tema. */
+/* Toda la composición es un enlace a nutrisenda.co. Al pasar el mouse (o con
+   el foco del teclado) la ventana se endereza y sube, igual que la ficha. */
+.case__link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.case__stage:hover .case__win,
+.case__link:focus-visible .case__win {
+  transform: translateY(-6px);
+}
+
+/* El anillo de foco va alrededor de la ventana, no de la caja del enlace */
+.case__link:focus-visible { outline: none; }
+
+.case__link:focus-visible .case__win {
+  outline: 2px solid var(--accent-text);
+  outline-offset: 3px;
+}
+
+/* Maqueta del sitio de NutriSenda (nutrisenda.co), con su propia marca.
+   Estos colores y fuentes son los de NutriSenda: solo se usan dentro de .ns. */
 .ns {
   --ns-bosque: #19381F;
   --ns-hoja: #4D934C;
@@ -1649,8 +1582,7 @@ h3 {
 }
 
 .ns__eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.8; }
-.ns__title { margin: 6px 0 2px; font-family: Alexandria, "Arial Black", sans-serif; font-weight: 800; font-size: clamp(1.5rem, 3.2vw, 2.15rem); line-height: 1.02; letter-spacing: -0.02em; }
-.ns__sub { font-family: Agbalumo, Georgia, serif; font-size: clamp(1.25rem, 2.6vw, 1.7rem); line-height: 1.1; color: var(--ns-hoja); }
+.ns__title { margin: 6px 0 2px; font-family: Alexandria, "Arial Black", sans-serif; font-weight: 800; font-size: clamp(1.3rem, 2.5vw, 1.75rem); line-height: 1.08; letter-spacing: -0.02em; text-wrap: balance; overflow-wrap: break-word; }
 .ns__text { max-width: 24rem; margin: 10px 0 14px; font-size: 14px; line-height: 1.45; }
 .ns__btn { display: inline-block; padding: 8px 16px; border-radius: 999px; background: var(--ns-bosque); color: var(--ns-crema); font-size: 12px; font-weight: 600; letter-spacing: 0.04em; }
 
@@ -1659,16 +1591,23 @@ h3 {
 
 .ns__band {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 8px;
   padding: 16px 18px 18px;
   background: var(--ns-bosque);
   color: var(--ns-crema);
 }
 
-.ns__svc { padding: 12px 14px; border-radius: 16px; border: 1px solid rgba(255, 254, 250, 0.2); }
-.ns__svc b { display: block; font-family: Alexandria, "Arial Black", sans-serif; font-weight: 800; font-size: 15px; line-height: 1.1; }
-.ns__svc span { font-family: Agbalumo, Georgia, serif; font-size: 17px; color: var(--ns-lima); }
+/* Las tres experiencias: en fila desde 640 px; en móvil, una debajo de otra */
+.ns__svc { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; padding: 10px 14px; border-radius: 16px; border: 1px solid rgba(255, 254, 250, 0.2); }
+.ns__svc b { font-family: Alexandria, "Arial Black", sans-serif; font-weight: 800; font-size: 14px; line-height: 1.15; }
+.ns__svc span { font-family: Agbalumo, Georgia, serif; font-size: 15px; line-height: 1.2; color: var(--ns-lima); text-align: right; }
+
+@media (min-width: 640px) {
+  .ns__band { grid-template-columns: repeat(3, 1fr); }
+  .ns__svc { display: block; padding: 12px 14px; }
+  .ns__svc b { display: block; }
+  .ns__svc span { display: block; margin-top: 4px; text-align: left; }
+}
 
 /* Ficha del manual de marca (paleta + tipografías) */
 .board {
@@ -1688,7 +1627,8 @@ h3 {
   transition: rotate 0.6s var(--ease), transform 0.6s var(--ease);
 }
 
-.case__stage:hover .board {
+.case__stage:hover .board,
+.case__link:focus-visible .board {
   rotate: 0deg;
   transform: translateY(-6px);
 }
@@ -2261,7 +2201,6 @@ h3 {
 
 .hero-in[data-delay="2"] { animation-delay: 120ms; }
 .hero-in[data-delay="3"] { animation-delay: 180ms; }
-.hero-in[data-delay="5"] { animation-delay: 240ms; }
 
 /* Brillo que recorre la frase en serif del hero */
 .hero h1 .em {
@@ -2282,8 +2221,6 @@ h3 {
 @keyframes shimmer { 0%, 100% { background-position: 0 0; } 50% { background-position: 100% 0; } }
 @keyframes float-a { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(30px, -26px); } }
 @keyframes float-b { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-36px, 22px); } }
-@keyframes pulse { 0%, 100% { opacity: 0.55; transform: scale(0.85); } 50% { opacity: 1; transform: scale(1); } }
-@keyframes marquee { to { transform: translateX(-50%); } }
 @keyframes ripple { 0% { opacity: 0.7; transform: scale(1); } 100% { opacity: 0; transform: scale(1.5); } }
 
 @keyframes mod-in {

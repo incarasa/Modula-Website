@@ -16,7 +16,7 @@ Un solo archivo de CSS y uno de JS por sitio. El código va formateado (una prop
 
 ## Tokens y fuentes
 
-- **Tokens como variables CSS** en `:root`, con los mismos nombres de `tokens.json` (`--tinta`, `--violeta`, `--rosa`, `--teal`, `--purpura`, `--violeta-medio`, `--rosa-claro`, `--muted-oscuro`…) y los semánticos (`--bg`, `--bg-soft`, `--card`, `--text`, `--text-muted`, `--accent-text`, `--rosa-texto`, `--teal-texto`, `--border-subtle`, `--border-strong`). El tema oscuro redefine solo los semánticos, en `@media (prefers-color-scheme: dark)` y en `:root[data-theme="dark"]`. Ningún componente usa un hexadecimal suelto: siempre un token.
+- **Tokens como variables CSS** en `:root`, con los mismos nombres de `tokens.json` (`--tinta`, `--violeta`, `--rosa`, `--teal`, `--purpura`, `--violeta-medio`, `--rosa-claro`, `--muted-oscuro`…) y los semánticos (`--bg`, `--bg-soft`, `--card`, `--text`, `--text-muted`, `--accent-text`, `--rosa-texto`, `--teal-texto`, `--border-subtle`, `--border-strong`). El sitio tiene un solo tema, claro: los semánticos tienen un único valor y `:root` declara `color-scheme: light` (más `<meta name="color-scheme" content="light">`) para que el navegador no lo oscurezca. No se prueba en tema oscuro. Ningún componente usa un hexadecimal suelto: siempre un token.
 - **Fuentes** desde Google Fonts: Bricolage Grotesque (opsz 12–96, 600–800), Plus Jakarta Sans (400–700), Barlow (500–700) y Fraunces cursiva (600, 700). Carga solo los pesos que se usan.
 
 ## Convenciones de código

@@ -37,6 +37,7 @@ CLAUDE.md         Contexto del proyecto para Claude Code
 - **Animación de entrada.** Añade la clase `rv` a cualquier elemento para que aparezca al hacer scroll; `data-delay="1"` a `"6"` lo retrasa de 80 en 80 ms.
 - **Botones de WhatsApp.** Añade `data-whatsapp` a cualquier enlace. Para un mensaje distinto: `data-whatsapp="Hola Modula, quiero un manual de marca"`.
 - **Iconos y logo.** Están en el sprite al final de `index.html` y se usan con `<svg><use href="#i-check"/></svg>`.
+- **Un solo tema.** El sitio siempre se ve en tema claro, aunque el teléfono o el computador estén en modo oscuro. No hace falta probarlo en oscuro.
 - **Movimiento reducido.** Si el visitante lo pide en su sistema, todas las animaciones se desactivan.
 
 ## Publicar
