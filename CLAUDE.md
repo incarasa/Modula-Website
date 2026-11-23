@@ -19,6 +19,8 @@ La fuente de verdad es `docs/sistema-de-diseno/` (copia del sistema «Modula»).
 - `tokens.json`: valores exactos de color, espaciado, radios y sombras.
 - `componente-*.md`: reglas del logo, botones, tarjetas y chips.
 
+El sitio web es **solo tema claro, por decisión de Modula**. La guía del sistema de diseño (`docs/sistema-de-diseno/README.md`, `tokens.json`) todavía describe un tema oscuro para otras piezas (presentaciones, piezas gráficas): no lo traigas al sitio.
+
 Lo esencial:
 
 - **Colores** siempre con los tokens de la sección 1 de `estilos.css` (`var(--violeta)`, `var(--text-muted)`…), nunca hexadecimales sueltos en los componentes. **Un solo tema, claro:** no hay modo oscuro (`color-scheme: light` en `:root` y en la meta del `<head>`); no añadas bloques `prefers-color-scheme` ni `data-theme`.

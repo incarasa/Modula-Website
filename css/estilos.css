@@ -729,6 +729,18 @@ h3 {
   margin-top: 8px;
 }
 
+/* Contenedor de las manchas: las desvanece en los últimos 160 px del hero
+   para que no terminen en un borde recto (la teal queda cortada abajo).
+   La máscara solo toca las manchas, no la cuadrícula ni el contenido. */
+.hero__blobs {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 160px), transparent);
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 160px), transparent);
+}
+
 /* Manchas de color desenfocadas del fondo.
    Sin filter: blur (pesa mucho en iPhone). El radial-gradient imita un
    desenfoque de 72 px: sólido hasta 144 px antes del borde, 50% en el borde
@@ -1497,7 +1509,28 @@ h3 {
 
 @media (min-width: 1024px) {
   .case__win { transform: perspective(1600px) rotateY(-6deg) rotateX(2deg); }
-  .case__stage:hover .case__win { transform: none; }
+}
+
+/* Toda la composición es un enlace a nutrisenda.co. Al pasar el mouse (o con
+   el foco del teclado) la ventana se endereza y sube, igual que la ficha. */
+.case__link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.case__stage:hover .case__win,
+.case__link:focus-visible .case__win {
+  transform: translateY(-6px);
+}
+
+/* El anillo de foco va alrededor de la ventana, no de la caja del enlace */
+.case__link:focus-visible { outline: none; }
+
+.case__link:focus-visible .case__win {
+  outline: 2px solid var(--accent-text);
+  outline-offset: 3px;
 }
 
 /* Maqueta del sitio de NutriSenda (nutrisenda.co), con su propia marca.
@@ -1594,7 +1627,8 @@ h3 {
   transition: rotate 0.6s var(--ease), transform 0.6s var(--ease);
 }
 
-.case__stage:hover .board {
+.case__stage:hover .board,
+.case__link:focus-visible .board {
   rotate: 0deg;
   transform: translateY(-6px);
 }

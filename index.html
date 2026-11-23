@@ -119,9 +119,12 @@
      HERO
      ====================================================================== -->
 <section class="hero grid-bg" id="inicio">
-  <div class="blob blob--violeta float-a"></div>
-  <div class="blob blob--rosa float-b"></div>
-  <div class="blob blob--teal float-c"></div>
+  <!-- Manchas de fondo: el contenedor las desvanece antes del borde inferior del hero -->
+  <div class="hero__blobs" aria-hidden="true">
+    <div class="blob blob--violeta float-a"></div>
+    <div class="blob blob--rosa float-b"></div>
+    <div class="blob blob--teal float-c"></div>
+  </div>
 
   <!-- Tarjetitas decorativas (solo pantallas anchas) -->
   <div class="hero__float hero__float--left float-a" aria-hidden="true">
@@ -357,58 +360,61 @@
         <div><dt>Sector</dt><dd>Bienestar corporativo</dd></div>
         <div><dt>Estado</dt><dd><span class="status-pill">Sitio publicado</span></dd></div>
       </dl>
-      <a class="link rv" data-delay="6" href="https://nutrisenda.co" target="_blank" rel="noopener">Visitar nutrisenda.co <span class="arrow" aria-hidden="true">↗</span></a>
+      <a class="link rv" data-delay="6" href="https://www.nutrisenda.co" target="_blank" rel="noopener">Visitar nutrisenda.co <span class="arrow" aria-hidden="true">↗</span></a>
     </div>
 
     <div class="case__stage rv" data-delay="2">
-      <!-- Maqueta del sitio publicado de NutriSenda: textos copiados de nutrisenda.co -->
-      <div class="win case__win">
-        <div class="win__bar">
-          <div class="win__dots"><i></i><i></i><i></i></div>
-          <div class="win__url"><svg><use href="#i-lock"/></svg>nutrisenda.co</div>
-        </div>
-        <div class="ns">
-          <div class="ns__nav">
-            <span class="ns__brand">
-              <img src="img/nutrisenda-isotipo.svg" alt="" width="26" height="25">
-              <img src="img/nutrisenda-logo.svg" alt="NutriSenda" width="80" height="22">
-            </span>
-            <span class="ns__links"><span>Charlas</span><span>Refrigerios</span><span>Contacto</span></span>
+      <!-- Toda la composición (ventana + ficha) es un solo enlace al sitio real -->
+      <a class="case__link" href="https://www.nutrisenda.co" target="_blank" rel="noopener" aria-label="Visitar el sitio de NutriSenda (se abre en una pestaña nueva)">
+        <!-- Maqueta del sitio publicado de NutriSenda: textos copiados de nutrisenda.co -->
+        <div class="win case__win">
+          <div class="win__bar">
+            <div class="win__dots"><i></i><i></i><i></i></div>
+            <div class="win__url"><svg><use href="#i-lock"/></svg>nutrisenda.co</div>
           </div>
-          <div class="ns__hero">
-            <div>
-              <div class="ns__eyebrow">Bienestar corporativo</div>
-              <div class="ns__title">Alimentación y conocimiento para equipos más saludables.</div>
-              <p class="ns__text">Refrigerios saludables y charlas de bienestar para tu empresa, diseñados por una nutricionista.</p>
-              <span class="ns__btn">Cotiza tu evento</span>
+          <div class="ns">
+            <div class="ns__nav">
+              <span class="ns__brand">
+                <img src="img/nutrisenda-isotipo.svg" alt="" width="26" height="25">
+                <img src="img/nutrisenda-logo.svg" alt="NutriSenda" width="80" height="22">
+              </span>
+              <span class="ns__links"><span>Charlas</span><span>Refrigerios</span><span>Contacto</span></span>
             </div>
-            <div class="ns__photo"><img src="img/nutrisenda-box.jpg" alt="Box de refrigerio NutriSenda con sándwich, chips de plátano, soda, yogurt, queso, fruta y croissant" width="1200" height="900" loading="lazy"></div>
-          </div>
-          <div class="ns__band">
-            <div class="ns__svc"><b>Pausa saludable</b><span>Refrigerios</span></div>
-            <div class="ns__svc"><b>Aprende y disfruta</b><span>Charla + refrigerio</span></div>
-            <div class="ns__svc"><b>Bienestar integral</b><span>La más completa</span></div>
+            <div class="ns__hero">
+              <div>
+                <div class="ns__eyebrow">Bienestar corporativo</div>
+                <div class="ns__title">Alimentación y conocimiento para equipos más saludables.</div>
+                <p class="ns__text">Refrigerios saludables y charlas de bienestar para tu empresa, diseñados por una nutricionista.</p>
+                <span class="ns__btn">Cotiza tu evento</span>
+              </div>
+              <div class="ns__photo"><img src="img/nutrisenda-box.jpg" alt="Box de refrigerio NutriSenda con sándwich, chips de plátano, soda, yogurt, queso, fruta y croissant" width="1200" height="900" loading="lazy"></div>
+            </div>
+            <div class="ns__band">
+              <div class="ns__svc"><b>Pausa saludable</b><span>Refrigerios</span></div>
+              <div class="ns__svc"><b>Aprende y disfruta</b><span>Charla + refrigerio</span></div>
+              <div class="ns__svc"><b>Bienestar integral</b><span>La más completa</span></div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Ficha de paleta y tipografías del manual -->
-      <aside class="board" aria-label="Paleta y tipografías de NutriSenda">
-        <span class="label">Manual de marca · Color</span>
-        <div class="board__swatches">
-          <div><i style="background: #19381F"></i><small>Bosque</small></div>
-          <div><i style="background: #4D934C"></i><small>Hoja</small></div>
-          <div><i style="background: #91B308"></i><small>Lima</small></div>
-          <div><i style="background: #EEE82B"></i><small>Sol</small></div>
-          <div><i style="background: #FFFEFA"></i><small>Crema</small></div>
+        <!-- Ficha de paleta y tipografías del manual -->
+        <div class="board">
+          <span class="label">Manual de marca · Color</span>
+          <div class="board__swatches">
+            <div><i style="background: #19381F"></i><small>Bosque</small></div>
+            <div><i style="background: #4D934C"></i><small>Hoja</small></div>
+            <div><i style="background: #91B308"></i><small>Lima</small></div>
+            <div><i style="background: #EEE82B"></i><small>Sol</small></div>
+            <div><i style="background: #FFFEFA"></i><small>Crema</small></div>
+          </div>
+          <div class="board__type">
+            <span class="font-alexandria">Aa</span>
+            <span class="font-agbalumo">Aa</span>
+            <span class="font-afacad">Aa</span>
+            <span class="label">3 familias</span>
+          </div>
         </div>
-        <div class="board__type">
-          <span class="font-alexandria">Aa</span>
-          <span class="font-agbalumo">Aa</span>
-          <span class="font-afacad">Aa</span>
-          <span class="label">3 familias</span>
-        </div>
-      </aside>
+      </a>
     </div>
   </div>
 </section>
