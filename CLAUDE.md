@@ -21,7 +21,7 @@ La fuente de verdad es `docs/sistema-de-diseno/` (copia del sistema «Modula»).
 
 Lo esencial:
 
-- **Colores** siempre con los tokens de la sección 1 de `estilos.css` (`var(--violeta)`, `var(--text-muted)`…), nunca hexadecimales sueltos en los componentes. Hay tema claro y oscuro: los tokens semánticos se redefinen en los dos bloques oscuros.
+- **Colores** siempre con los tokens de la sección 1 de `estilos.css` (`var(--violeta)`, `var(--text-muted)`…), nunca hexadecimales sueltos en los componentes. **Un solo tema, claro:** no hay modo oscuro (`color-scheme: light` en `:root` y en la meta del `<head>`); no añadas bloques `prefers-color-scheme` ni `data-theme`.
 - **Texto de color:** usa `--accent-text`, `--rosa-texto`, `--teal-texto` y `--purpura-texto`; `rosa` y `teal` puros no llegan a 4.5:1 sobre blanco.
 - **Tipografías:** títulos en Bricolage Grotesque 800, texto en Plus Jakarta Sans, chips/botones/etiquetas en Barlow MAYÚSCULAS con tracking, y como máximo una frase por título en Fraunces cursiva con el degradado (clase `.em`).
 - **Formas:** todo lo interactivo es píldora; tarjetas con radio de 16–24 px; sin bordes de color en un solo lado; sin emoji.
@@ -44,7 +44,7 @@ Lo esencial:
 
 ## Proyectos y contenido
 
-- **NutriSenda** (bienestar corporativo: charlas y refrigerios saludables). Modula hizo su marca completa (logo, isotipos, manual, paleta, tipografías, ilustraciones, fotografía) y está construyendo su sitio. Sus colores y fuentes solo se usan dentro de su maqueta (`.ns` en el CSS).
+- **NutriSenda** (bienestar corporativo: charlas y refrigerios saludables). Modula hizo su marca completa (logo, isotipos, manual, paleta, tipografías, ilustraciones, fotografía) y su sitio, ya publicado en https://nutrisenda.co. Su código está en la carpeta hermana `../nutrisenda-landing`: úsala como fuente de textos e imágenes para la maqueta. Sus colores y fuentes solo se usan dentro de su maqueta (`.ns` en el CSS).
 - Los precios no se publican: el trabajo es a medida y se cotiza tras una conversación.
 - Servicios futuros (anunciados como «En camino»): papelería, piezas para redes y gestión de redes por suscripción.
 
@@ -70,5 +70,5 @@ Lo esencial:
 
 ## Antes de terminar un cambio
 
-- Abre `index.html` en el navegador y revisa escritorio y móvil (~390 px): sin scroll horizontal, textos legibles en tema claro y oscuro.
+- Abre `index.html` en el navegador y revisa escritorio y móvil (~390 px): sin scroll horizontal y con los textos legibles. El sitio solo tiene tema claro: no hace falta probarlo en oscuro.
 - Revisa que no queden voseos ni datos de contacto viejos.
