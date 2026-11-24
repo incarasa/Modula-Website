@@ -25,7 +25,7 @@ CLAUDE.md         Contexto del proyecto para Claude Code
 | Un texto                           | `index.html`. Cada sección empieza con un comentario en mayúsculas.   |
 | El número o el mensaje de WhatsApp | `js/main.js` (`WHATSAPP_NUMBER`, `WHATSAPP_MESSAGE`). Todos los enlaces con `data-whatsapp` lo usan. |
 | El correo                          | Cierre y footer de `index.html` (`mailto:`)                            |
-| El enlace de Instagram             | Footer de `index.html` (marcado como PENDIENTE)                        |
+| El enlace de Instagram             | Footer de `index.html` y `sameAs` en el JSON-LD del `<head>`           |
 | Un color de marca                  | Sección 1 de `css/estilos.css` (tokens)                                |
 | Una pregunta frecuente             | Copia un bloque `.faq__item` y cambia sus `id`                         |
 | Un paso del proceso                | Copia un `<li class="step">` y ajusta `step--N` y `data-phase`         |

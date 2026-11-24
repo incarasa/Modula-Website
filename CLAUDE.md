@@ -26,6 +26,7 @@ Lo esencial:
 - **Colores** siempre con los tokens de la sección 1 de `estilos.css` (`var(--violeta)`, `var(--text-muted)`…), nunca hexadecimales sueltos en los componentes. **Un solo tema, claro:** no hay modo oscuro (`color-scheme: light` en `:root` y en la meta del `<head>`); no añadas bloques `prefers-color-scheme` ni `data-theme`.
 - **Texto de color:** usa `--accent-text`, `--rosa-texto`, `--teal-texto` y `--purpura-texto`; `rosa` y `teal` puros no llegan a 4.5:1 sobre blanco.
 - **Tipografías:** títulos en Bricolage Grotesque 800, texto en Plus Jakarta Sans, chips/botones/etiquetas en Barlow MAYÚSCULAS con tracking, y como máximo una frase por título en Fraunces cursiva con el degradado (clase `.em`).
+- **Íconos de contacto:** además de WhatsApp (`#i-wa`), se permiten Instagram (`#i-instagram`) y el sobre de correo (`#i-mail`), solo en el footer y en la información de contacto. Todos van en el sprite y en `currentColor`.
 - **Formas:** todo lo interactivo es píldora; tarjetas con radio de 16–24 px; sin bordes de color en un solo lado; sin emoji.
 - **Logo:** «m» + anillo de nueve festones (`#m-ring` en el sprite) + «dula». El anillo no se usa como fondo grande ni girando.
 - **Movimiento:** aparición al hacer scroll con la clase `rv` y `data-delay`; una animación protagonista por sección como máximo; todo se apaga con `prefers-reduced-motion`.
@@ -41,6 +42,7 @@ Lo esencial:
 ## Contacto
 
 - WhatsApp: +57 322 871 3697. El número y el mensaje están en `js/main.js` (`WHATSAPP_NUMBER`, `WHATSAPP_MESSAGE`); todo enlace con `data-whatsapp` los usa. No hay formularios: los botones de propuesta abren WhatsApp directamente.
+- Instagram: @is.modula (https://www.instagram.com/is.modula/). Está en el footer y como `sameAs` en el JSON-LD del `<head>`; si cambia, actualiza los dos.
 - Correo: contacto@ismodula.com. Dominio: ismodula.com (los ejemplos usan `tunegocio.ismodula.com`).
 - No uses modula.studio ni números de ejemplo.
 
@@ -54,6 +56,8 @@ Lo esencial:
 
 - No uses `filter: blur()` ni `backdrop-filter` en elementos grandes o animados en móvil: en iPhone dejan el hero en blanco al cargar y retrasan el menú. Para manchas de color usa `radial-gradient` (como `.blob`); el vidrio de la barra y el menú solo va desde 1024 px; debajo, la barra usa `--glass-solid` y el menú `--bg` (opaco).
 - Las fuentes de Modula están en `fonts/` (woff2, subconjunto latin) y se declaran en la sección 0 de `estilos.css`, con respaldos ajustados (`size-adjust`) para que el texto no salte. No vuelvas a cargarlas desde Google Fonts. Si cambias un archivo de `fonts/`, cámbiale el nombre: `vercel.json` lo guarda en caché un año como inmutable.
+- **CSS, JS e imágenes sin caché larga.** `vercel.json` les pone `public, max-age=0, must-revalidate`: el navegador pregunta en cada visita si hay versión nueva, y Vercel responde 304 (sin volver a descargar) si no cambió. Con la caché de un día que había antes, quien ya había entrado siguió viendo el `estilos.css` viejo después de publicar (el footer nuevo salía sin estilos). Estos archivos cambian sin cambiar de nombre; las fuentes no, por eso solo ellas tienen caché de un año.
+- **El `?v=2` de `estilos.css` y `main.js`** en `index.html` se añadió una sola vez, para que los navegadores que aún guardaban la versión con la regla de un día bajaran la nueva de inmediato. Con la regla actual **no hace falta cambiar ese número en cada publicación**; solo súbelo si algún día vuelve a haber una caché larga para CSS o JS.
 - El titular del hero (h1) no lleva animación de entrada: es lo que mide Google como contenido principal (LCP).
 - Mantén las etiquetas Open Graph y `twitter:card` del `<head>` de `index.html`, con `og:image` en URL absoluta. La imagen `img/og-modula.png` (1200 × 630) se genera desde `og/og-card.html`; si cambia el dominio, actualiza `og:url` y `og:image`.
 
@@ -67,7 +71,6 @@ Lo esencial:
 
 ## Pendientes
 
-- Enlace real de Instagram en el footer (marcado como PENDIENTE en `index.html`). Cuando exista, añádelo también como `sameAs` en el JSON-LD del `<head>`.
 - Cuando haya más proyectos, la sección «Proyecto destacado» puede pasar a varios casos.
 
 ## Antes de terminar un cambio
