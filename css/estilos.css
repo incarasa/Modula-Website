@@ -2145,14 +2145,15 @@ h3 {
 
 .footer__links svg { flex: none; width: 18px; height: 18px; }
 
-.footer__links a:focus-visible {
-  outline: 2px solid var(--accent-text);
+/* Foco claro dentro del footer: --accent-text (violeta) sobre tinta solo
+   llega a 2.3:1; el blanco al 80 % supera de sobra el 3:1 que pide WCAG. */
+.footer :focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
   outline-offset: 3px;
 }
 
-/* Escritorio: logo, texto y contacto alineados arriba; el contacto a la derecha */
+/* Escritorio: logo, texto y contacto centrados en vertical; el contacto a la derecha */
 @media (min-width: 900px) {
-  .footer__in { align-items: start; }
   .footer__copy { text-align: center; }
   .footer__links { justify-self: end; }
 }
