@@ -41,6 +41,7 @@ Lo esencial:
 ## Contacto
 
 - WhatsApp: +57 322 871 3697. El número y el mensaje están en `js/main.js` (`WHATSAPP_NUMBER`, `WHATSAPP_MESSAGE`); todo enlace con `data-whatsapp` los usa. No hay formularios: los botones de propuesta abren WhatsApp directamente.
+- Instagram: @is.modula (https://www.instagram.com/is.modula/). Está en el footer y como `sameAs` en el JSON-LD del `<head>`; si cambia, actualiza los dos.
 - Correo: contacto@ismodula.com. Dominio: ismodula.com (los ejemplos usan `tunegocio.ismodula.com`).
 - No uses modula.studio ni números de ejemplo.
 
@@ -67,7 +68,6 @@ Lo esencial:
 
 ## Pendientes
 
-- Enlace real de Instagram en el footer (marcado como PENDIENTE en `index.html`). Cuando exista, añádelo también como `sameAs` en el JSON-LD del `<head>`.
 - Cuando haya más proyectos, la sección «Proyecto destacado» puede pasar a varios casos.
 
 ## Antes de terminar un cambio
