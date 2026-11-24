@@ -34,7 +34,7 @@ Modula es un estudio de diseño y desarrollo web que construye sitios modernos, 
 
 ## Iconografía
 
-Aún no hay un set propio. El prototipo usa emoji en los iconos de problema y una cruz «+» de trazo de 1.4 px en el FAQ; el criterio de este sistema es un único estilo de trazo de 1.5 px, esquinas redondeadas y color heredado, dentro de un cuadrado de `radius-xl`. Los marcos de ventana usan los tres puntos de semáforo (`dot-rojo`, `dot-amarillo`, `dot-verde`), que son decorativos. El único icono de marca de terceros es el de WhatsApp.
+Aún no hay un set propio. El prototipo usa emoji en los iconos de problema y una cruz «+» de trazo de 1.4 px en el FAQ; el criterio de este sistema es un único estilo de trazo de 1.5 px, esquinas redondeadas y color heredado, dentro de un cuadrado de `radius-xl`. Los marcos de ventana usan los tres puntos de semáforo (`dot-rojo`, `dot-amarillo`, `dot-verde`), que son decorativos. Iconos de marcas de terceros: WhatsApp en cualquier botón o enlace de contacto, e Instagram solo en el footer y en la información de contacto. En esos mismos lugares se permite el sobre de correo. Instagram y el sobre siguen el trazo del sistema (1.5 px, esquinas redondeadas, `currentColor`); WhatsApp usa su forma rellena.
 
 ## Accesibilidad: lo que el prototipo debe corregir
 

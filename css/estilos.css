@@ -2119,20 +2119,42 @@ h3 {
 .footer .logo { height: 34px; color: #fff; }
 .footer__copy { max-width: 24rem; margin: 0; font-size: 0.9rem; line-height: 1.6; }
 
+/* Contacto: lista de tres filas (ícono + texto), alineadas a la izquierda */
 .footer__links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 24px;
+  display: grid;
+  justify-items: start;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
   font-family: var(--font-ui);
   font-size: 14px;
 }
 
-.footer__links a { color: var(--muted-oscuro); text-decoration: none; transition: color 0.2s; }
-.footer__links a:hover { color: #fff; }
+.footer__links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted-oscuro);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: color 0.2s;
+}
 
+.footer__links a:hover { color: #fff; } /* el ícono va en currentColor: cambia con el texto */
+
+.footer__links svg { flex: none; width: 18px; height: 18px; }
+
+.footer__links a:focus-visible {
+  outline: 2px solid var(--accent-text);
+  outline-offset: 3px;
+}
+
+/* Escritorio: logo, texto y contacto alineados arriba; el contacto a la derecha */
 @media (min-width: 900px) {
+  .footer__in { align-items: start; }
   .footer__copy { text-align: center; }
-  .footer__links { justify-content: flex-end; }
+  .footer__links { justify-self: end; }
 }
 
 

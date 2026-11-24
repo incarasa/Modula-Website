@@ -26,6 +26,7 @@ Lo esencial:
 - **Colores** siempre con los tokens de la sección 1 de `estilos.css` (`var(--violeta)`, `var(--text-muted)`…), nunca hexadecimales sueltos en los componentes. **Un solo tema, claro:** no hay modo oscuro (`color-scheme: light` en `:root` y en la meta del `<head>`); no añadas bloques `prefers-color-scheme` ni `data-theme`.
 - **Texto de color:** usa `--accent-text`, `--rosa-texto`, `--teal-texto` y `--purpura-texto`; `rosa` y `teal` puros no llegan a 4.5:1 sobre blanco.
 - **Tipografías:** títulos en Bricolage Grotesque 800, texto en Plus Jakarta Sans, chips/botones/etiquetas en Barlow MAYÚSCULAS con tracking, y como máximo una frase por título en Fraunces cursiva con el degradado (clase `.em`).
+- **Íconos de contacto:** además de WhatsApp (`#i-wa`), se permiten Instagram (`#i-instagram`) y el sobre de correo (`#i-mail`), solo en el footer y en la información de contacto. Todos van en el sprite y en `currentColor`.
 - **Formas:** todo lo interactivo es píldora; tarjetas con radio de 16–24 px; sin bordes de color en un solo lado; sin emoji.
 - **Logo:** «m» + anillo de nueve festones (`#m-ring` en el sprite) + «dula». El anillo no se usa como fondo grande ni girando.
 - **Movimiento:** aparición al hacer scroll con la clase `rv` y `data-delay`; una animación protagonista por sección como máximo; todo se apaga con `prefers-reduced-motion`.
